@@ -82,12 +82,11 @@ document.addEventListener("DOMContentLoaded", function() {
 
     document.body.appendChild(div1);
 
+    let x = 1;
 
     function listItems() {
-        let x = 1;
-        let y = x++;
         let h3 = document.createElement('h3');
-        let h3text = document.createTextNode('This is list item ' + y );
+        let h3text = document.createTextNode('This is list item ' + x++ );
         h3.appendChild(h3text);
         document.body.appendChild(h3);
     }
