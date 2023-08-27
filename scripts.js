@@ -54,14 +54,12 @@ document.addEventListener("DOMContentLoaded", function() {
     })
     
     h1.className = 'awesome-h1';
-
     h2.className = 'awesome-h2';
     h3.className = 'awesome-h3';
     h4.className = 'awesome-h4';
     h5.className = 'awesome-h5';
     h6.className = 'awesome-h6';
     
-    h1.style.fontSize = '4em'
     
     div1.className = "header-container"
     
@@ -89,10 +87,19 @@ document.addEventListener("DOMContentLoaded", function() {
         let h3text = document.createTextNode('This is list item ' + x++ );
         h3.appendChild(h3text);
         document.body.appendChild(h3);
+        h3.addEventListener("click", function() {
+            let randomColor = colors[Math.floor(Math.random() * colors.length)];
+            h3.style.color = randomColor;
+        })
+        h3.addEventListener("dblclick", function() {
+            h3.removeChild(h3text);
+        })
     }
 
 
     btnTwo.addEventListener("click", listItems)
+
+
     
 
     let button = document.createElement('button');
